@@ -2,7 +2,7 @@ from urllib import response
 import requests
 
 
-API_KEY = "80ad85c179abcfae365e1a3712aacbab"
+API_KEY = "own api key"
 BASE_URL = "https://api.openweathermap.org/data/2.5/weather"
 
 city = input('Enter a city name: ')
