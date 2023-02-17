@@ -6,7 +6,7 @@ class ExcelAdder:
     def __init__(self, master):
         self.master = master
         self.master.title("Excel Adder")
-        self.master.geometry("400x300")
+        self.master.geometry("400x400")
         self.file_path = None
 
         # Create buttons
@@ -68,6 +68,31 @@ class ExcelAdder:
         workbook.save(self.file_path)
 
         self.status_label.config(text="Data added successfully")
+
+        # Show added data
+        added_data_label = tk.Label(self.master, text="Added Data:")
+        added_data_label.pack()
+
+        # Get the column headings
+        headings = []
+        for column in worksheet.iter_cols(min_row=1, max_row=1):
+            for cell in column:
+                headings.append(cell.value)
+
+        # Get the last row (i.e. the row that was just added)
+        last_row = []
+        for column in worksheet.iter_cols(min_row=worksheet.max_row, max_row=worksheet.max_row):
+            for cell in column:
+                last_row.append(cell.value)
+
+        # Create a label to display the added data
+        added_data_str = ""
+        for i in range(len(headings)):
+            added_data_str += f"{headings[i]}: {last_row[i]}\n"
+
+        added_data_value_label = tk.Label(self.master, text=added_data_str)
+        added_data_value_label.pack()
+
 
 if __name__ == '__main__':
     root = tk.Tk()
