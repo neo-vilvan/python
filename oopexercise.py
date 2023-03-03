@@ -40,10 +40,14 @@ class Item:
     def __repr__(self):
         return f"Item('{self.name}', {self.price}, {self.quantity})"
 
+class Phone(Item):
+    pass
+
+phone1 = Item("jsvPhone10", 500, 5)
+phone1.broken_phones = 1
+phone2 = Phone("jsvPhone20", 700, 5)
+phone2.broken_phones = 1
 
 
 
 
-
-
-print(Item.instantiate_from_csv())

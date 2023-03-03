@@ -21,7 +21,7 @@ num = 0
 while num < 1 or num >10:
     num = int(input("Enter a number between 1 and 10: "))
 
-
+#for loop
 string = "Hello World"
 vowels = 0
 for char in string:
