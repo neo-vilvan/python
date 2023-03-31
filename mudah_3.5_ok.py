@@ -7,7 +7,7 @@ house_titles = []
 house_prices = []
 
 # Set the URL to fetch
-url = "https://www.mudah.my/list?category=2001&price=500000-750000&region=12&sortby=price_asc&type=sell"
+url = "https://www.mudah.my/list?category=2001&price=500000-750000&region=12&type=sell"
 
 # Set the headers for the request
 headers = {
@@ -36,4 +36,4 @@ raw_data = {
 dataframe = pd.DataFrame(raw_data, columns=["House Name", "House Prices"])
 print(dataframe)
 
-dataframe.to_csv('mudah_data.csv', index=False)
+#dataframe.to_csv('mudah_data.csv', index=False)
